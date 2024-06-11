@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1080px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left1 {
+        display: flex;
+        gap: 48px;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+
+    .footerItem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .right {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 720px) {
+
+    .left1,
+    .footerItem {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .footerItem ul {
+        padding: 0;
+    }
+}
+
+@media (max-width: 815px) {
+    .heading {
+        font-size: 2.5rem;
+        text-align: left;
+    }
+
+    .athelete {
+        font-size: 1.25rem;
+        text-align: left;
+    }
+
+    .datas {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .data1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .login {
+        font-size: 2.5rem;
+    }
+
+    .heading {
+        font-size: 2rem;
+        text-align: left;
+    }
+
+    .athelete {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .buttons {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+}
+
+@media (max-width: 390px) {
+    .athelete {
+        font-size: 0.875rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 380px) {
+    .datas {
+        height: 90vh;
+    }
+}

@@ -21,7 +21,6 @@ function App() {
           <Route path='/about' element={<>
             <Navbar />
             <About />
-
           </>} />
           <Route path='/store' element={<>
             <Navbar />

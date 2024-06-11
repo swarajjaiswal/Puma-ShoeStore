@@ -9,20 +9,20 @@ const Login = () => {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve()
-      }, d * 4000);
+      }, d * 2000);
     })
   }
 
   const onSubmit = async (data, e) => {
     setLoading(true);
-    await delay(4);
+    await delay(2);
     console.log(data);
     e.target.reset();
     setLoading(false);
   };
 
   return (
-    <div className='flex items-center justify-center min-h-screen' style={{ background: 'linear-gradient(to bottom right, #4a148c, #880e4f)' }}>
+    <div className='flex items-center justify-center p-4 min-h-screen' style={{ background: 'linear-gradient(to bottom right, #4a148c, #880e4f)' }}>
       <div className='bg-white shadow-lg rounded-lg p-8 max-w-md w-full'>
         <h1 className='text-3xl md:text-4xl font-bold text-center text-gray-800 mb-6'>Login</h1>
         <form onSubmit={handleSubmit(onSubmit)}>

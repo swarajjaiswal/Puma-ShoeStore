@@ -8,22 +8,26 @@ import Footer from './components/Footer';
 
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
-
 function App() {
-
-
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/Puma">
         <Routes>
           <Route path="/" element={<>
             <Navbar />
             <Hero />
             <Footer />
-          </>
-          } />
-          <Route path='/about' element={<> <Navbar /> <About /></>} />
-          <Route path='/store' element={<> <Navbar /><Store /><Footer /></>} />
+          </>} />
+          <Route path='/about' element={<>
+            <Navbar />
+            <About />
+            <Footer />
+          </>} />
+          <Route path='/store' element={<>
+            <Navbar />
+            <Store />
+            <Footer />
+          </>} />
           <Route path='/login' element={<Login />} />
         </Routes>
       </BrowserRouter>

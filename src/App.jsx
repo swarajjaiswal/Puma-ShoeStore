@@ -5,10 +5,12 @@ import About from './components/About';
 import Store from './components/Store';
 import Login from './components/Login';
 import Footer from './components/Footer';
+import Cart from './components/Cart';
 
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
 function App() {
+
   return (
     <>
       <BrowserRouter basename="/Puma">
@@ -26,6 +28,11 @@ function App() {
             <Navbar />
             <Store />
             <Footer />
+          </>} />
+          <Route path='/cart' element={<>
+            <Navbar />
+            <Cart />
+
           </>} />
           <Route path='/login' element={<Login />} />
         </Routes>

@@ -119,3 +119,19 @@
         height: 90vh;
     }
 }
+@media (max-width: 365px) {
+    .right{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        justify-content: center;
+    }
+    .joins{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+      
+    }
+}

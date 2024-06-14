@@ -8,25 +8,25 @@ const Footer = () => {
                     <div className="footerItem flex flex-col gap-3">
                         <h2 className="text-2xl font-semibold flex items-start">Products</h2>
                         <ul className="space-y-2 flex flex-col items-start text-lg text-gray-400">
-                            <li>Footwear</li>
-                            <li>Clothing</li>
-                            <li>Accessories</li>
+                            <li className='hover:text-gray-300 cursor-pointer'>Footwear</li>
+                            <li className='hover:text-gray-300 cursor-pointer'>Clothing</li>
+                            <li className='hover:text-gray-300 cursor-pointer'>Accessories</li>
                         </ul>
                     </div>
                     <div className="footerItem flex flex-col gap-3">
                         <h2 className="text-2xl font-semibold flex items-start">Our Offerings</h2>
                         <ul className="space-y-2 flex flex-col items-star text-lg text-gray-400">
-                            <li>Men's Shoes</li>
-                            <li>Women's Shoes</li>
-                            <li>Kids' Shoes</li>
+                            <li className='hover:text-gray-300 cursor-pointer'>Men's Shoes</li>
+                            <li className='hover:text-gray-300 cursor-pointer'>Women's Shoes</li>
+                            <li className='hover:text-gray-300 cursor-pointer'>Kids' Shoes</li>
                         </ul>
                     </div>
                     <div className="footerItem flex flex-col gap-3">
                         <h2 className="text-2xl font-semibold flex items-start">Company</h2>
                         <ul className="space-y-2 flex flex-col items-star text-lg text-gray-400">
-                            <li>About Us</li>
-                            <li>Contact Us</li>
-                            <li>Terms of Use</li>
+                            <li className='hover:text-gray-300 cursor-pointer'>About Us</li>
+                            <li className='hover:text-gray-300 cursor-pointer'>Contact Us</li>
+                            <li className='hover:text-gray-300 cursor-pointer'>Terms of Use</li>
                         </ul>
                     </div>
 

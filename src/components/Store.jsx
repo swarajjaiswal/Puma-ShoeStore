@@ -1,66 +1,105 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItem, increment } from '../redux/cartSlice';
 
 const Store = () => {
+    const dispatch = useDispatch();
+    const cart = useSelector((state) => state.cart);
+
     const products = [
         {
+            id: 1,
             imgUrl: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/399848/01/fnd/IND/fmt/png/PUMA-Evoke-Layup-Men's-Sneakers",
             title: "PUMA Evoke Layup Men's Sneakers",
             price: "₹2,999",
             link: "https://in.puma.com/in/en/pd/puma-evoke-layup-mens-sneakers/399848?swatch=01"
         },
         {
+            id: 2,
             imgUrl: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/399848/02/fnd/IND/fmt/png/PUMA-Evoke Layup Men's Sneakers",
-            title: "PUMA Evoke Layup Men's Sneakers",
+            title: "PUMA Layup Men's Sneakers",
             price: "₹3,299",
             link: "https://in.puma.com/in/en/pd/puma-evoke-layup-mens-sneakers/399848?swatch=02"
         },
         {
+            id: 3,
             imgUrl: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/394371/01/fnd/IND/fmt/png/Smashic-Unisex-Sneakers",
-            title: "Smashic Unisex Sneakers",
+            title: "Smashic Unisex Layup Sneakers",
             price: "₹2,019",
             link: "https://in.puma.com/in/en/pd/smashic-unisex-sneakers/394371?swatch=01"
         },
         {
+            id: 4,
             imgUrl: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/395829/01/sv01/fnd/IND/fmt/png/Carina-Slim-Perf-Women's-Sneakers",
             title: "Carina Slim Perf Women's Sneakers",
             price: "₹2,249",
             link: "https://in.puma.com/in/en/pd/carina-slim-perf-womens-sneakers/395829?swatch=01"
         },
         {
+            id: 5,
             imgUrl: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/194774/21/fnd/IND/fmt/png/Rift-Slip-On-Pop-Kids'-Shoes",
-            title: "Rift Slip On Pop Kids' Shoes",
+            title: "Rift Slip On Pop Kids' Navy-Electric Lime Shoes",
             price: "₹2,399",
             link: "https://in.puma.com/in/en/pd/rift-slip-on-pop-kids-shoes/194774?swatch=21"
         },
         {
+            id: 6,
             imgUrl: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/107734/02/fnd/AUS/fmt/png/FUTURE-7-PLAY-FG/AG-Youth-Football-Boots",
             title: "FUTURE 7 PLAY FG/AG Youth Football Boots",
             price: "₹3,599",
             link: "https://in.puma.com/in/en/pd/future-7-play-fg-ag-youth-football-boots/107734?swatch=02"
         },
+        {
+            id: 7,
+            imgUrl: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/378453/01/sv01/fnd/AUS/fmt/png/Deviate-NITRO%E2%84%A2-Elite-2-'Marathon-Series'-Men's-Running-Shoes",
+            title: "Deviate NITRO™ Elite 2 Men's Running Shoes",
+            price: "₹18,999",
+            link: "https://in.puma.com/in/en/pd/deviate-nitro%E2%84%A2-elite-2-marathon-series-mens-running-shoes/378453?swatch=01"
+        },
+        {
+            id: 8,
+            imgUrl: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/391819/02/sv01/fnd/IND/fmt/png/Shuffle-Mid-one8-Better-V2-Men's-Sneakers",
+            title: "Shuffle Mid one8 Better V2 Men's Sneakers",
+            price: "₹4,899",
+            link: "https://in.puma.com/in/en/pd/shuffle-mid-one8-better-v2-mens-sneakers/391819?swatch=02"
+        }
     ];
 
+    const handleClick = () => {
+        alert("Item added to Cart Successfully");
+    };
+
+    const isItemInCart = (productId) => {
+        return cart.items.some(item => item.id === productId && item.quantity > 0);
+    };
+
     return (
-        <div className='store'>
-            <div className="title m-2">
-                <h1 className='font-bold text-4xl text-center'>Welcome to our Store</h1>
-            </div>
-            <div className="cardContainer flex flex-wrap justify-center">
-                {products.map((product, index) => (
-                    <div key={index} className="card m-5 max-w-sm rounded overflow-hidden shadow-lg flex flex-col justify-between">
-                        <img className="w-full object-cover" src={product.imgUrl} alt="Image Not Found" />
-                        <div className="px-6 py-4">
-                            <div className="font-bold text-xl mb-2">{product.title}</div>
-                            <p className="text-gray-700 text-base">Price: {product.price}</p>
-                        </div>
-                        <div className="px-6 py-4 text-center">
-                            <a href={product.link} className="btn btn-primary inline-block px-4 py-2 bg-black text-white rounded hover:bg-white hover:text-black border border-black transition duration-300">View Product</a>
+        <div className='store container px-5 mx-auto py-8'>
+            <h1 className='text-3xl font-semibold text-center mb-8'>Welcome to our Store</h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                {products.map((product) => (
+                    <div key={product.id} className="bg-white rounded-lg flex overflow-hidden  shadow-lg hover:transition-transform transform hover:scale-105 duration-300 cursor-pointer">
+                        <div className='h-3/4'><img className="w-full h-56 object-cover" src={product.imgUrl} alt="Product" />
+                            <div className="p-4">
+                                <h3 className="text-xl font-semibold mb-2">{product.title}</h3>
+                                <p className="text-gray-600 mb-2">{product.price}</p>
+                                <div className="flex justify-center">
+                                    <a href={product.link} target="_blank" rel="noopener noreferrer" className="bg-gray-800 text-white px-4 py-2 rounded-full text-sm uppercase tracking-wide hover:bg-gray-700 transition duration-300">View Product</a>
+                                </div>
+                            </div>
+                            <button
+                                onClick={() => { handleClick(); dispatch(addItem(product)); dispatch(increment()); }}
+                                disabled={isItemInCart(product.id)}
+                                className={`w-full mt-4 mb-4 bg-indigo-600 font-semibold text-white px-4 py-2 rounded-full text-sm uppercase   focus:outline-none ${isItemInCart(product.id) ? 'opacity-50 cursor-not-allowed' : 'hover:bg-indigo-700 hover:shadow-lg'}`}
+                            >
+                                {isItemInCart(product.id) ? 'Added to Cart' : 'Add to Cart'}
+                            </button>
                         </div>
                     </div>
                 ))}
             </div>
         </div>
     );
-}
+};
 
 export default Store;

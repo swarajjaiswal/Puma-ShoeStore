@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-scroll';
+import { IoCartOutline } from "react-icons/io5";
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     const [showMenu, setShowMenu] = useState(false);
+    const cart = useSelector((state) => state.cart)
 
     const toggleMenu = () => {
         setShowMenu(!showMenu);
@@ -25,19 +27,23 @@ const Navbar = () => {
                     Menu
                 </button>
                 {showMenu && (
-                    <div className="absolute top-full left-0 bg-gray-700 p-4">
+                    <div className="absolute top-full left-0 bg-gray-700 p-4 z-40">
                         <ul className="space-y-4">
                             <li>
-                                <NavLink to="/" className="font-bold text-white">Home</NavLink>
+                                <NavLink to="/" className="font-bold text-white" onClick={toggleMenu}>Home</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/store" className="font-bold text-white">Store</NavLink>
-                            </li>
-                            <li className='hover:text-gray-300'>
-                                <Link to="footer" smooth={true} duration={500} className="cursor-pointer font-bold">Contact</Link>
+                                <NavLink to="/store" className="font-bold text-white" onClick={toggleMenu}>Store</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/about" className="font-bold text-white">About</NavLink>
+                                <NavLink to="/about" className="font-bold text-white" onClick={toggleMenu}>About</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/cart" className="font-bold text-white" onClick={toggleMenu}>
+                                    <div className='flex items-center justify-center gap-2'>
+                                        Cart <span className='text-lg ml-1'><IoCartOutline /></span>
+                                    </div>
+                                </NavLink>
                             </li>
                         </ul>
                     </div>
@@ -52,10 +58,14 @@ const Navbar = () => {
                         <NavLink to="/store" className="font-bold">Store</NavLink>
                     </li>
                     <li className='hover:text-gray-300'>
-                        <Link to="footer" smooth={true} duration={500} className="cursor-pointer font-bold">Contact</Link>
+                        <NavLink to="/about" className="font-bold">About</NavLink>
                     </li>
                     <li className='hover:text-gray-300'>
-                        <NavLink to="/about" className="font-bold">About</NavLink>
+                        <NavLink to="/cart" className="font-bold text-white">
+                            <div className='flex items-center justify-center gap-2'>
+                                Cart <span className='text-lg ml-1'><IoCartOutline /></span>
+                            </div>
+                        </NavLink>
                     </li>
                 </ul>
             </div>

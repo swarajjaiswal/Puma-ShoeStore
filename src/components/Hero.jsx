@@ -1,13 +1,18 @@
 import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 const Main = () => {
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate("/store")
+    }
+
     return (
         <div className="container mx-auto my-2 w-full bg-gray-100 p-10 flex flex-col lg:flex-row items-center">
             <div className="left flex-1 flex flex-col justify-start items-start p-5">
                 <h1 className="font-bold text-5xl lg:text-7xl px-3 py-5 text-blue-800">YOUR FEET DESERVE THE BEST</h1>
                 <h3 className="w-full px-3 py-5 text-lg lg:text-xl text-gray-700">YOUR FEET DESERVE THE BEST AND WE’RE HERE TO HELP YOU WITH OUR SHOES. YOUR FEET DESERVE THE BEST AND WE’RE HERE TO HELP YOU WITH OUR SHOES.</h3>
                 <div className="buttons flex justify-start items-center p-5 gap-4">
-                    <button className="bg-red-500 px-4 py-2 text-white text-lg hover:bg-red-600 transition duration-300">Shop Now</button>
+                    <button onClick={handleClick} className="bg-red-500 px-4 py-2 text-white text-lg hover:bg-red-600 transition duration-300">Shop Now</button>
                     <button className="border-2 border-black px-4 py-2 text-lg rounded-sm hover:bg-black hover:text-white transition duration-300">Category</button>
                 </div>
                 <div className="icons flex px-3 py-5 gap-4 items-center">

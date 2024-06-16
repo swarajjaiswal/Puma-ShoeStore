@@ -12,13 +12,13 @@ const Navbar = () => {
     };
 
     return (
-        <nav className='flex justify-between items-center bg-gray-700 text-white py-4 px-6 sticky top-0 z-30'>
+        <nav className='flex justify-between items-center  bg-black text-white py-4 px-6 sticky top-0 z-30'>
             <div className="logo">
                 <NavLink to="/">
                     <img
                         src="https://imgs.search.brave.com/rBProRx1G4x0_Uj3bowU9_tzqQG6aaHps4GYiDoW3ho/rs:fit:860:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi9hL2FlL1B1/bWEtbG9nby0lMjh0/ZXh0JTI5LnN2Zy8y/MjBweC1QdW1hLWxv/Z28tJTI4dGV4dCUy/OS5zdmcucG5n"
                         alt="Puma logo"
-                        className="h-8"
+                        className="h-8 invert"
                     />
                 </NavLink>
             </div>
@@ -27,7 +27,7 @@ const Navbar = () => {
                     Menu
                 </button>
                 {showMenu && (
-                    <div className="absolute top-full left-0 bg-gray-700 p-4 z-40">
+                    <div className="absolute top-full left-0 bg-black p-4 z-40">
                         <ul className="space-y-4">
                             <li>
                                 <NavLink to="/" className="font-bold text-white" onClick={toggleMenu}>Home</NavLink>
@@ -69,7 +69,7 @@ const Navbar = () => {
                     </li>
                 </ul>
             </div>
-            <button className='bg-red-500 text-white px-4 py-2 rounded'>
+            <button className='login-color text-white px-4 py-2 rounded hover:gradient-text'>
                 <NavLink to="/login">Login</NavLink>
             </button>
         </nav>

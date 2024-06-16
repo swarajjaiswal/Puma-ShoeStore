@@ -22,12 +22,12 @@ const Login = () => {
   };
 
   return (
-    <div className='flex items-center justify-center p-4 min-h-screen' style={{ background: 'linear-gradient(to bottom right, #4a148c, #880e4f)' }}>
-      <div className='bg-white shadow-lg rounded-lg p-8 max-w-md w-full'>
+    <div className='flex items-center justify-center p-4 min-h-screen' style={{ background: 'linear-gradient(90deg, #0f0c29 0%, #302b63 50%, #24243e 100%)' }}>
+      <div className='bg-white shadow-lg rounded-lg p-8 max-w-md w-full' style={{background:'linear-gradient(90deg, #3762ff 0%, #f5f5f5 100%)'}}>
         <h1 className='text-3xl md:text-4xl font-bold text-center text-gray-800 mb-6'>Login</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
-            <label htmlFor="username" className="block text-gray-800 font-semibold mb-2">Username</label>
+            <label htmlFor="username" className="block text-gray-800 font-bold mb-2">Username</label>
             <input
               id="username"
               type="text"
@@ -38,7 +38,7 @@ const Login = () => {
             {errors.username && <p className='text-red-500 mt-1'>{errors.username.message}</p>}
           </div>
           <div className="mb-6">
-            <label htmlFor="password" className="block text-gray-800 font-semibold mb-2">Password</label>
+            <label htmlFor="password" className="block font-bold text-gray-800  mb-2">Password</label>
             <input
               id="password"
               type="password"
@@ -51,7 +51,7 @@ const Login = () => {
           <div className="flex items-center justify-between">
             <button
               disabled={isSubmitting || loading}
-              className={`bg-indigo-500 text-white py-2 px-4 rounded-md focus:outline-none focus:bg-indigo-600 ${isSubmitting || loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+              className={`bg-black text-white py-2 px-4 rounded-md focus:outline-none focus:bg-indigo-600 ${isSubmitting || loading ? 'opacity-50 cursor-not-allowed' : ''}`}
               type="submit"
             >
               {isSubmitting || loading ? 'Submitting...' : 'Submit'}

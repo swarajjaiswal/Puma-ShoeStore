@@ -3,10 +3,55 @@
 @tailwind utilities;
 
 
+
+.gradient-text {
+    background: linear-gradient(90deg, #03001e 0%, #7303c0 33%, #ec38bc 66%, #fdeff9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.login-color {
+    background: linear-gradient(90deg, #7b7979 0%, #6776c2 42%, #3f51b5 57%, #673ab7 73%, #7a4acf 95%);
+}
+
+.pink {
+    color: #ad5389;
+}
+
+.card-color {
+    background: linear-gradient(90deg, #3762ff 0%, #f5f5f5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-color {
+    background: radial-gradient(circle, #8a4af3 0%, #673ab7 44%, #0e1d70 47%, #896f76 62%, #ff5722 73%, #e91e63 87%, #f44336 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-text {
+    background: radial-gradient(circle, #8a4af3 0%, #673ab7 44%, #0e1d70 47%, #896f76 62%, #ff5722 73%, #e91e63 87%, #f44336 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.athelete-text {
+    background: linear-gradient(90deg, #ff0057 0%, #673ab7 34%, #3f51b5 40%, #ff5722 68%, #e91e63 80%, #f44336 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+}
+
+body {
+    background-color: black;
 }
 
 @media (max-width: 1080px) {
@@ -119,19 +164,21 @@
         height: 90vh;
     }
 }
+
 @media (max-width: 365px) {
-    .right{
+    .right {
         display: flex;
         flex-direction: column;
         gap: 5px;
         justify-content: center;
     }
-    .joins{
+
+    .joins {
         display: flex;
         flex-direction: column;
         gap: 15px;
         justify-content: center;
         align-items: center;
-      
+
     }
 }

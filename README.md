@@ -1,1 +1,1 @@
-This is  shoe website made usng ReactJs and TailwindCSS
+This is  shoe website made using ReactJs and TailwindCSS

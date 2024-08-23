@@ -52,7 +52,7 @@ const Store = () => {
         {
             id: 7,
             imgUrl: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/378453/01/sv01/fnd/AUS/fmt/png/Deviate-NITRO%E2%84%A2-Elite-2-'Marathon-Series'-Men's-Running-Shoes",
-            title: "NITRO™ Elite 2 Men's Running Shoes",
+            title: "NITRO™ Elite Men's Running Shoes",
             price: "₹18,999",
             link: "https://in.puma.com/in/en/pd/deviate-nitro%E2%84%A2-elite-2-marathon-series-mens-running-shoes/378453?swatch=01"
         },
@@ -70,7 +70,7 @@ const Store = () => {
     };
 
     const isItemInCart = (productId) => {
-        return cart.items.some(item => item.id === productId && item.quantity > 0);
+        return cart.items.find(item => item.id === productId && item.quantity > 0);
     };
 
     return (
@@ -88,15 +88,14 @@ const Store = () => {
                                     <a href={product.link} target="_blank" rel="noopener noreferrer" className="bg-gray-800 text-white px-4 py-2 rounded-full text-sm uppercase tracking-wide hover:bg-gray-700 transition duration-300">View Product</a>
                                 </div>
                             </div>
-                            </div>
-                            <button
+                        </div>
+                        <button
                             onClick={() => { handleClick(); dispatch(addItem(product)); dispatch(increment()); }}
                             disabled={isItemInCart(product.id)}
-                            className={`w-full mt-4 mb-4 font-semibold text-white px-4 py-2 rounded-full text-sm uppercase focus:outline-none ${isItemInCart(product.id) ? 'opacity-50 cursor-not-allowed' : 'bg-gradient-to-b from-indigo-600 to-indigo-800 hover:from-indigo-800 hover:to-indigo-900 hover:shadow-lg'}`}
-                        >
+                            className={`w-full mt-4 mb-4 font-semibold text-white px-4 py-2 rounded-full text-sm uppercase focus:outline-none ${isItemInCart(product.id) ? 'opacity-50 cursor-not-allowed' : 'bg-gradient-to-b from-indigo-600 to-indigo-800 hover:from-indigo-800 hover:to-indigo-900 hover:shadow-lg'}`}>
                             {isItemInCart(product.id) ? 'Added to Cart' : 'Add to Cart'}
                         </button>
-                        
+
                     </div>
                 ))}
             </div>

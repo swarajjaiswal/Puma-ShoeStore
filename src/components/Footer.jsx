@@ -38,7 +38,7 @@ const Footer = () => {
                 <div className="right space-y-3 flex flex-col justify-center items-center p-5">
                     <h1 className='font-bold text-xl mb-2 athelete-text' >Subscribe to our newsletter</h1>
                     <div className="joins space-x-4">
-                        <input className='border-solid border-2 border-black-500 text-black' type="email" placeholder=' xyz@gmail.com' />
+                        <input className='bg-transparent border-none focus:border-solid border-2 border-black-500 text-white' type="email" placeholder=' xyz@gmail.com' />
                         <button className='footer-color px-2 border-solid border-2 border-transparent' >Join</button>
                     </div>
                     <div className="follow space-y-2">

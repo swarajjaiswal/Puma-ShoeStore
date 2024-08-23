@@ -23,7 +23,7 @@ const Login = () => {
 
   return (
     <div className='flex items-center justify-center p-4 min-h-screen' style={{ background: 'linear-gradient(90deg, #0f0c29 0%, #302b63 50%, #24243e 100%)' }}>
-      <div className='bg-white shadow-lg rounded-lg p-8 max-w-md w-full' style={{background:'linear-gradient(90deg, #3762ff 0%, #f5f5f5 100%)'}}>
+      <div className='bg-white shadow-lg rounded-lg p-8 max-w-md w-full' style={{ background: 'linear-gradient(90deg, #3762ff 0%, #f5f5f5 100%)' }}>
         <h1 className='text-3xl md:text-4xl font-bold text-center text-gray-800 mb-6'>Login</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">

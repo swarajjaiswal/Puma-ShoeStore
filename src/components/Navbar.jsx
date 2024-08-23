@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
 import { IoCartOutline } from "react-icons/io5";
-import { useSelector } from 'react-redux';
+
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     const [showMenu, setShowMenu] = useState(false);
-    const cart = useSelector((state) => state.cart)
+
 
     const toggleMenu = () => {
         setShowMenu(!showMenu);
+    };
+    const handleBlur = () => {
+        setTimeout(() => {
+            setShowMenu(!showMenu);
+        }, 50);
+
     };
 
     return (
@@ -23,7 +29,7 @@ const Navbar = () => {
                 </NavLink>
             </div>
             <div className="sm:hidden relative">
-                <button onClick={toggleMenu} className='text-white'>
+                <button onClick={toggleMenu} onBlur={handleBlur} className='text-white'>
                     Menu
                 </button>
                 {showMenu && (
